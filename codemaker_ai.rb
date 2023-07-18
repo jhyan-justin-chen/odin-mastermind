@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_relative 'Password'
+
 ##
 # Represents the AI for the codemaker.
 class CodeMakerAI < CodeMaker

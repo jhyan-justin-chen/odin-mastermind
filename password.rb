@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_relative 'Code'
+
 ##
 # Represents the code that is chosen at the start.
 class Password < Code

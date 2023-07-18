@@ -1,5 +1,11 @@
 # frozen_string_literal: true
 
+require_relative 'Console'
+require_relative 'CodeMaker'
+require_relative 'CodeMaker_AI'
+require_relative 'CodeBreaker'
+require_relative 'CodeBreaker_AI'
+
 ##
 # Represents the core logic of the game.
 class GameLogic

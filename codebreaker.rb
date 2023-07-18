@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_relative 'Guess'
+
 ##
 # Represents the player guessing the code.
 class CodeBreaker
