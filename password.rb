@@ -8,4 +8,7 @@ class Password < Code
 
   # Checks if a digit exists in the password.
   def contains_digit?(digit) end
+
+  # Checks if the guess is fully correct.
+  def correct_guess?(guess) end
 end
