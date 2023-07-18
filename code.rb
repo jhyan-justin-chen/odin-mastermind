@@ -3,7 +3,13 @@
 ##
 # Represents a code in Mastermind.
 class Code
-  def initialize(digit1, digit2, digit3, digit4)
-    @code = [digit1, digit2, digit3, digit4]
+  def initialize(*digits)
+    @code = if digits.length == 4
+              [digits[0], digits[1], digits[2], digits[3]]
+            elsif digits.empty?
+              [nil, nil, nil, nil]
+            else
+              raise ArgumentError, 'Argument should consist of four digits'
+            end
   end
 end
