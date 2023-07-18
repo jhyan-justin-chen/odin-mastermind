@@ -36,7 +36,13 @@ class GameLogic
     (1..@tries).each do |guess|
       @console.show_guesses_remaining(@tries - guess + 1)
       @guess = @codebreaker.query_guess
-      @console.show_guess_hints(@guess.count_misplaced_digits(@password), @guess.count_correct_digits(@password))
+
+      misplaced = @guess.count_misplaced_digits(@password)
+      correct = @guess.count_correct_digits(@password)
+
+      @codebreaker.update(misplaced, correct) if codemaker_type == 'AI'
+
+      @console.show_guess_hints(misplaced, correct)
       return @console.show_codebreaker_win(guess) if @password.correct_guess?(@guess)
     end
 
