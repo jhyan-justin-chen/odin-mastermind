@@ -10,7 +10,7 @@ class CodeMaker
   # Queries for a new password.
   def query_password
     loop do
-      @password = Password.new(@console.query_password)
+      @password = Password.new(@console.query_password.split(','))
     rescue ArgumentError
       @console.inform_password_error
     else
