@@ -26,10 +26,10 @@ class GameLogic
 
     1..@tries.each do |guess|
       @guess = @codebreaker.query_guess
-      return console.print_codebreaker_win(guess) if @password.correct_guess?(@guess)
+      return console.show_codebreaker_win(guess) if @password.correct_guess?(@guess)
     end
 
-    console.print_codemaker_win
+    console.show_codemaker_win
   end
 end
 
