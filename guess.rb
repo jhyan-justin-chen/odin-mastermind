@@ -3,7 +3,7 @@
 ##
 # Represents a guess at the code.
 class Guess < Code
-  attr_reader code
+  attr_reader :code
 
   # Gets the number of digits that are correct but in the wrong location.
   def count_misplaced_digits(password)
