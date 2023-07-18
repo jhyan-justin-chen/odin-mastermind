@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_relative 'Password'
+
 ##
 # Represents the player making the code to be guessed.
 class CodeMaker
