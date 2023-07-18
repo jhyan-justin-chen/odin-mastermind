@@ -19,6 +19,15 @@ class Console
     puts "You have #{correct} digits that exist and are in the right position."
   end
 
+  # Show guesses remaining.
+  def show_guesses_remaining(guesses)
+    puts "You have #{guesses} guesses remaining to guess the password."
+  end
+
+  def show_valid_digits(valid_digits)
+    puts "The digits in play are #{valid_digits.join(', ')}."
+  end
+
   # Asks if codemaker should be AI or player.
   def query_codemaker_type
     puts 'Who is playing the codemaker? (AI or Player)'

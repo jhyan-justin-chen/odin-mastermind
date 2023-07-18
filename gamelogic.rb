@@ -5,6 +5,7 @@ require_relative 'CodeMaker'
 require_relative 'CodeMaker_AI'
 require_relative 'CodeBreaker'
 require_relative 'CodeBreaker_AI'
+require_relative 'Code'
 
 ##
 # Represents the core logic of the game.
@@ -27,10 +28,13 @@ class GameLogic
     @codemaker = codemaker_type == 'AI' ? CodeMakerAI.new : CodeMaker.new
     @codebreaker = codebreaker_type == 'AI' ? CodeBreakerAI.new : CodeBreaker.new
 
+    @console.show_valid_digits(Code.new.valid_digits)
+
     @password = @codemaker.query_password
     @guess = Guess.new
 
     (1..@tries).each do |guess|
+      @console.show_guesses_remaining(@tries - guess + 1)
       @guess = @codebreaker.query_guess
       @console.show_guess_hints(@guess.count_misplaced_digits(@password), @guess.count_correct_digits(@password))
       return @console.show_codebreaker_win(guess) if @password.correct_guess?(@guess)
