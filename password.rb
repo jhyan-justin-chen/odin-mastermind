@@ -17,7 +17,7 @@ class Password < Code
 
   # Checks if the guess is fully correct.
   def correct_guess?(guess)
-    @code == guess
+    @code == guess.code
   end
 
   def nil?

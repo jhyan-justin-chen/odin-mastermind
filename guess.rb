@@ -3,6 +3,8 @@
 ##
 # Represents a guess at the code.
 class Guess < Code
+  attr_reader code
+
   # Gets the number of digits that are correct but in the wrong location.
   def count_misplaced_digits(password)
     (@code.select { |digit| password.contains_digit?(digit) }).length - count_correct_digits(password)
