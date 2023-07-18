@@ -25,4 +25,8 @@ class Console
   # Informs user of password selection error.
   def inform_password_error
   end
+
+  # Informs user of guess selection error.
+  def inform_guess_error
+  end
 end
