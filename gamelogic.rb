@@ -10,8 +10,8 @@ class GameLogic
 
     @tries = tries
     @console = Console.new
-    codemaker_type = console.query_codemaker_type
-    codebreaker_type = console.query_codebreaker_type
+    codemaker_type = console.query_codemaker_type until %w[AI Player].include?(codemaker_type)
+    codebreaker_type = console.query_codebreaker_type until %w[AI Player].include?(codebreaker_type)
 
     gameloop(codemaker_type, codebreaker_type)
   end
