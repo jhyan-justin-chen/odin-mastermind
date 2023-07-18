@@ -9,25 +9,11 @@ class GameLogic
     raise ArgumentError, 'Argument should be greater than 0.' unless tries.positive?
 
     @tries = tries
-    codemaker_type = query_codemaker_type
-    codebreaker_type = query_codebreaker_type
+    @console = Console.new
+    codemaker_type = console.query_codemaker_type
+    codebreaker_type = console.query_codebreaker_type
 
     gameloop(codemaker_type, codebreaker_type)
-  end
-
-  # Asks if codemaker should be AI or player.
-  def query_codemaker_type
-  end
-
-  # Asks if codebreaker should be AI or player.
-  def query_codebreaker_type
-  end
-
-  # Prints codebreaker victory message to console.
-  def print_codebreaker_win(guesses) end
-
-  # Prints codemaker victory message to console.
-  def print_codemaker_win
   end
 
   # Runs main game loop.
@@ -40,10 +26,10 @@ class GameLogic
 
     1..@tries.each do |guess|
       @guess = @codebreaker.query_guess
-      return print_codebreaker_win(guess) if @password.correct_guess?(@guess)
+      return console.print_codebreaker_win(guess) if @password.correct_guess?(@guess)
     end
 
-    print_codemaker_win
+    console.print_codemaker_win
   end
 end
 
