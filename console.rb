@@ -9,4 +9,12 @@ class Console
   # Prints codemaker victory message to console.
   def print_codemaker_win
   end
+
+  # Asks if codemaker should be AI or player.
+  def query_codemaker_type
+  end
+
+  # Asks if codebreaker should be AI or player.
+  def query_codebreaker_type
+  end
 end
