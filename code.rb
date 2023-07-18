@@ -14,7 +14,7 @@ class Code
   end
 
   def valid?(digits)
-    return true if digits.nil?
+    return true if digits.empty?
     return false unless digits.length == 4
     return false unless (digits - valid_digits).empty?
 
