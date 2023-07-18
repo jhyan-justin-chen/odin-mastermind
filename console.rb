@@ -4,13 +4,19 @@
 # Represents the console interface for Mastermind.
 class Console
   # Prints codebreaker victory message to console.
-  def show_codebreaker_win(guesses) 
+  def show_codebreaker_win(guesses)
     puts "The codebreaker has won, using #{guesses} guesses!"
   end
 
   # Prints codemaker victory message to console.
   def show_codemaker_win
     puts 'The codemaker has won!'
+  end
+
+  # Show hints for a guess.
+  def show_guess_hints(exists, correct)
+    puts "You have #{exists} digits that exist but are in the wrong position."
+    puts "You have #{correct} digits that exist and are in the right position."
   end
 
   # Asks if codemaker should be AI or player.

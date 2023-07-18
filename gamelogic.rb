@@ -26,6 +26,7 @@ class GameLogic
 
     1..@tries.each do |guess|
       @guess = @codebreaker.query_guess
+      @console.show_guess_hints(@guess.count_misplaced_digits, @guess.count_correct_digits)
       return console.show_codebreaker_win(guess) if @password.correct_guess?(@guess)
     end
 
