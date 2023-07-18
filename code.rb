@@ -3,6 +3,8 @@
 ##
 # Represents a code in Mastermind.
 class Code
+  NUM_TYPES = 5
+
   def initialize(*digits)
     raise ArgumentError, 'Invalid code' unless valid?(digits)
 
@@ -10,7 +12,7 @@ class Code
   end
 
   def valid_digits
-    [1, 2, 3, 4, 5]
+    (1..NUM_TYPES).to_a
   end
 
   def valid?(digits)
